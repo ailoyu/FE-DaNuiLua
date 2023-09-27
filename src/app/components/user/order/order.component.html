@@ -1,8 +1,8 @@
 <app-header></app-header>
 <div class="container">
     <div class="intro-section">
-        <h1>Đây là trang Order</h1>
-        <p>Sử dụng Bootstrap</p>
+        <h1>Giỏ hàng</h1>
+        <p>Chuyên bán và cung cấp về đá núi lửa</p>
     </div>    
     <div class="row">
         <div class="col-md-6">
@@ -110,14 +110,14 @@
                             </div>
                         </td>
                         <td>{{ item.quantity }}</td>
-                        <td>{{ item.product.price | number: '.0-0'  }}</td>
-                        <td>{{ (item.product.price * item.quantity) | number: '.0-0'  }}</td>
+                        <td>{{ item.product.price | number: '.0-0'  }} VND</td>
+                        <td>{{ (item.product.price * item.quantity) | number: '.0-0'  }} VND</td>
                     </tr>
                 </ng-container>
             </tbody>
         </table>   
             <div class="text-start mt-3">
-                <h4 class="header-text text-end ">Tổng giá: {{ totalAmount | number: '.0-0' }}</h4>
+                <h4 class="header-text text-end ">Tổng giá: {{ totalAmount | number: '.0-0' }} VND</h4>
             </div>
             <div class="mt-3">
                 <h4 class="product-header">Nhập coupon</h4>
