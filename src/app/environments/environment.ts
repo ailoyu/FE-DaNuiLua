@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    apiBaseUrl: 'https://twinkleee-0f5f3ae8991e.herokuapp.com/api/v1',
+    apiBaseUrl: 'https://da-nui-lua-shop-a279f366af17.herokuapp.com/api/v1',
 };
