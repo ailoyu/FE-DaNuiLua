@@ -8,7 +8,7 @@
         <li><a routerLink="/admin/edit-products" routerLinkActive="active">Thêm mới sản phẩm</a></li>
       </ul>
     </div>
-<div class="container">
+<div class="container twinkle">
     <div class="confirmation-container" style="text-align: center;">
         <h1>Danh sách sản phẩm</h1>
         <div class="search-box">
@@ -37,7 +37,7 @@
                   </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let product of products">
+                <tr *ngFor="let product of products" class="twinkle">
                     <td>
                         <input type="checkbox" id="checkbox_{{product.id}}" 
                           name="foo" [value]="product.id" class="styled-checkbox"
@@ -52,7 +52,7 @@
                         </div>
                     </td>
                     <td>{{product.description}}</td>
-                    <td>{{product.price}}</td>
+                    <td>{{product.price | number: '.0-0'}} VND</td>
                     <td>{{product.category_name}}</td>
                 </tr>
                 

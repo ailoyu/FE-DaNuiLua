@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit{
       next: (response: any) => {
         
         response.products.forEach((product : Product) => {
-          product.url = `${environment.apiBaseUrl}/products/images/${product.thumbnail}`;
+          product.url = product.thumbnail;
         });
         debugger
         this.products = response.products;

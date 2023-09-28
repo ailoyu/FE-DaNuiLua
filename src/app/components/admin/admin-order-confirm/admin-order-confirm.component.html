@@ -8,7 +8,7 @@
         <li><a routerLink="/admin/edit-products" routerLinkActive="active">Thêm mới sản phẩm</a></li>
       </ul>
     </div>
-<div class="container">
+<div class="container twinkle">
     <div class="confirmation-container">
         <h1>Quản lý các đơn hàng</h1>
         <p>Dưới đây là thông tin chi tiết về các đơn hàng của khách hàng</p>     
@@ -31,7 +31,7 @@
         </li>
       </ul>
     
-    <div class="row"  *ngFor="let order of getOrder">
+    <div class="row twinkle"  *ngFor="let order of getOrder">
         <div class="mt-2"></div>
         <div  class="col-md-1">
         <th scope="col" class="text-start" *ngIf="order.status === 'Đã hủy'">
@@ -80,7 +80,7 @@
                 <tr *ngFor="let orderDetail of order.orderDetails">
                     <td>
                         <div class="product-info" (click)="onProductClick(orderDetail.product.id)">
-                            <img [src]="parseThumbnail(orderDetail.product.thumbnail)" alt="Product Image" class="product-image">
+                            <img [src]="orderDetail.product.thumbnail" alt="Product Image" class="product-image">
                             <span class="product-name">{{orderDetail.product.name}}</span>
                         </div>
                     </td>

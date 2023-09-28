@@ -63,9 +63,10 @@ export class ProductsComponent implements OnInit{
       next: (response: any) => {
         
         response.products.forEach((product : Product) => {
-          product.url = `${environment.apiBaseUrl}/products/images/${product.thumbnail}`;
+          product.url = product.thumbnail;
         });
         debugger
+        
         this.products = response.products;
         this.totalPages = response.totalPage;
         this.visiblePages = this.generateVisiblePageArray(this.currentPage, this.totalPages);

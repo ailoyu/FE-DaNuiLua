@@ -97,11 +97,10 @@ deleteImage(image: { file: File, base64: string }) {
           next: (response : any) => {
             // Lấy danh sách sản phẩm và thay đổi URL
             debugger
-            // if(response.product_images && response.product_images.length > 0){
-              response.product_images.forEach((product_image: ProductImage) => {
-                product_image.image_url = `${environment.apiBaseUrl}/products/images/${product_image.image_url}`;
-              });
-            // }
+            // response.product_images.forEach((product_image: ProductImage) => {
+            //   product_image.image_url = `${environment.apiBaseUrl}/products/images/${product_image.image_url}`;
+            // });
+            
             debugger
             this.product = response
             console.log(this.product)

@@ -34,9 +34,9 @@ export class IdentityComponent implements OnInit{
       this.address = this.loginResponse.address;
       this.fullName = this.loginResponse.fullname;
       this.phoneNumber = this.loginResponse.phone_number;
-      if (!this.loginResponse.avatar.startsWith("http")) {
-        this.loginResponse.avatar = `${environment.apiBaseUrl}/products/images/${this.loginResponse.avatar}`;
-      } 
+      // if (!this.loginResponse.avatar.startsWith("http")) {
+      //   this.loginResponse.avatar = `${environment.apiBaseUrl}/products/images/${this.loginResponse.avatar}`;
+      // } 
       debugger
       console.log(this.loginResponse);
     });  

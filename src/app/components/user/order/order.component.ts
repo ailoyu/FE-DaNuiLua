@@ -85,9 +85,9 @@ export class OrderComponent implements OnInit{
         this.cartItems = productIds.map((productId) => {
           debugger
           const product = products.find((p) => p.id === productId);
-          if (product) {
-            product.thumbnail = `${environment.apiBaseUrl}/products/images/${product.thumbnail}`;
-          }          
+          // if (product) {
+          //   product.thumbnail = `${environment.apiBaseUrl}/products/images/${product.thumbnail}`;
+          // }          
           return {
             product: product!,
             quantity: cart.get(productId)!

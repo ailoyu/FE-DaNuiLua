@@ -1,11 +1,11 @@
 <app-header></app-header>
-<div class="container">
+<div class="container twinkle">
     <div class="confirmation-container">
         <h1>Lịch sử các đơn hàng</h1>
         <p>Dưới đây là thông tin chi tiết về các đơn hàng của bạn</p>     
     </div>
     <div class="row">
-        <table *ngFor="let order of getOrder" class="mb-3">
+        <table *ngFor="let order of getOrder" class="mb-3 twinkle">
             <thead>
                 <tr (click)="toggleBodyAndFooter(order.id)" style="cursor: pointer;">
                     <div style="background-color: rgb(101, 102, 172);">
@@ -39,7 +39,7 @@
                 <tr *ngFor="let orderDetail of order.orderDetails">
                     <td>
                         <div class="product-info" (click)="onProductClick(orderDetail.product.id)">
-                            <img [src]="parseThumbnail(orderDetail.product.thumbnail)" alt="Product Image" class="product-image">
+                            <img [src]="orderDetail.product.thumbnail" alt="Product Image" class="product-image">
                             <span class="product-name">{{orderDetail.product.name}}</span>
                         </div>
                     </td>

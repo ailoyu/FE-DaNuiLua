@@ -9,10 +9,10 @@
     </div>
     
     <!-- Đoạn này có 1 search bar bên trái, 1 combo box bên phải (hiện danh mục sphẩm) -->
-    <carousel>
+    <carousel >
         <div  *ngFor="let product of products">
         <slide (click)="onProductClick(product.id)">
-          <img class="carousel-image" [src]="product.url" alt="Slide 1" style="cursor: pointer;">
+          <img class="carousel-image twinkle" [src]="product.url" alt="Slide 1" style="cursor: pointer;">
           <div class="carousel-caption">
             <h3>{{product.name}}</h3>
             <p>Giá: {{product.price | number: '.0-0' }} VND</p>

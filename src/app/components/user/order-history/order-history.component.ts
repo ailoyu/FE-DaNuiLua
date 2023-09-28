@@ -71,11 +71,11 @@ export class OrderHistoryComponent implements OnInit{
 return formattedDate || '';
   }
   
-  parseThumbnail(thumbnail: string): string{
-    debugger
-    thumbnail =  `${environment.apiBaseUrl}/products/images/` + thumbnail;
-    return thumbnail;
-  }
+  // parseThumbnail(thumbnail: string): string{
+  //   debugger
+  //   thumbnail =  `${environment.apiBaseUrl}/products/images/` + thumbnail;
+  //   return thumbnail;
+  // }
 
   onProductClick(productId: number) {
     debugger
