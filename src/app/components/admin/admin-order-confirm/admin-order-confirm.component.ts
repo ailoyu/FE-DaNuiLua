@@ -30,6 +30,7 @@ export class AdminOrderConfirmComponent implements OnInit{
   loginResponse$!: Observable<LoginResponse> | null;
   loginResponse!: LoginResponse | null;
   getOrder: any[] = [];
+  getCancelledOrder: any[] = [];
 
   selectedOrder: number | null = null;
 
@@ -87,7 +88,9 @@ export class AdminOrderConfirmComponent implements OnInit{
             orderDate: this.parseDate(order.orderDate),
             shippingDate: this.parseDate(order.shippingDate)
           }));
-          debugger
+
+          // Hủy (đặt cờ để hiện checkbox, và nút xóa)
+          this.getCancelledOrder = (status === 'cancelled') ? this.getOrder : [];
           console.log(this.getOrder);
         });
     });

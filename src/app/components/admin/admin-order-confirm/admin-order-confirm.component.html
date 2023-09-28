@@ -13,7 +13,7 @@
         <h1>Quản lý các đơn hàng</h1>
         <p>Dưới đây là thông tin chi tiết về các đơn hàng của khách hàng</p>     
     </div>
-    <div *ngIf="isCancelledRoute()">
+    <div *ngIf="getCancelledOrder.length > 0">
         <th><input type="checkbox" onClick="toggle(this)" (click)="toggleAllCheckboxes()" id="checkAll" class="styled-checkbox"></th>
       </div>
     <ul class="nav nav-tabs">
@@ -100,7 +100,7 @@
         </table>  
     </div>
     </div>    
-    <div class="button-container" *ngIf="isCancelledRoute()">
+    <div class="button-container" *ngIf="getCancelledOrder.length > 0">
         <button class="btn btn-gradient" type="button" (click)="deleteSelectedOrders()">Xóa đơn hàng</button>
       </div>
 
