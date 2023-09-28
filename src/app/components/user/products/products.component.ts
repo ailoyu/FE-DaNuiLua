@@ -13,11 +13,8 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class ProductsComponent implements OnInit{
 
-  loading: boolean = true
-  onLoad() {
-      this.loading = false;
-  }
 
+  
   products: Product[] = [];
   currentPage: number = 1;
   itemsPerPage: number = 12; // 10 items/ 1 trang
