@@ -66,4 +66,14 @@ export class OrderService {
     return null;
   }
 
+
+  deleteOrders(selectedIds: number[]): Observable<any>{
+    debugger
+    const options = {
+        body: { ids: selectedIds }
+      };
+    return this.http.delete(`${environment.apiBaseUrl}/orders/`, options);
+}
+
+
 }

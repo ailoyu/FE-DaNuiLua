@@ -13,6 +13,9 @@
         <h1>Quản lý các đơn hàng</h1>
         <p>Dưới đây là thông tin chi tiết về các đơn hàng của khách hàng</p>     
     </div>
+    <div *ngIf="isCancelledRoute()">
+        <th><input type="checkbox" onClick="toggle(this)" (click)="toggleAllCheckboxes()" id="checkAll" class="styled-checkbox"></th>
+      </div>
     <ul class="nav nav-tabs">
         <li class="nav-item" routerLink="/admin/order-confirm/pending" routerLinkActive="active" >
           <a class="nav-link" >Đang xử lý</a>
@@ -27,9 +30,18 @@
           <a class="nav-link">Hủy đơn hàng</a>
         </li>
       </ul>
-    <div class="row">
-        
-        <table *ngFor="let order of getOrder" class="mb-3">
+    
+    <div class="row"  *ngFor="let order of getOrder">
+        <div class="mt-2"></div>
+        <div  class="col-md-1">
+        <th scope="col" class="text-start" *ngIf="order.status === 'Đã hủy'">
+            <input type="checkbox" id="checkbox_{{order.id}}" 
+              name="foo" [value]="order.id" class="styled-checkbox"
+              (change)="toggleSelection(order.id)">
+          </th>
+        </div>
+        <div class="col-md-11">
+        <table>
             <thead>
                 <tr (click)="toggleBodyAndFooter(order.id)" style="cursor: pointer;">
                     <div style="background-color: rgb(101, 102, 172);">
@@ -86,7 +98,12 @@
                 </tr>
             </tfoot>
         </table>  
+    </div>
     </div>    
+    <div class="button-container" *ngIf="isCancelledRoute()">
+        <button class="btn btn-gradient" type="button" (click)="deleteSelectedOrders()">Xóa đơn hàng</button>
+      </div>
+
 </div>
 </div>
 <app-footer></app-footer>

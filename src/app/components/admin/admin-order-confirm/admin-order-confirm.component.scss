@@ -14,6 +14,10 @@
     cursor: pointer;
 }
 
+
+
+
+
 .product-image {
     width: 100px;
     height: 100px;
@@ -33,6 +37,16 @@ table {
     border: 1px solid white;
     border-spacing: 0;    
     background-color: rgb(12, 13, 54);    
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn {
+  margin-top: 10px;
 }
 
 th,
@@ -111,6 +125,43 @@ td {
 
 .cancel-btn {
   margin-right: 10px;
+}
+
+.styled-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+}
+
+.styled-checkbox:checked {
+  background-color: #2196F3;
+  border-color: #2196F3;
+}
+
+.styled-checkbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.styled-checkbox:checked:after {
+  display: block;
+}
+
+.styled-checkbox:after {
+  left: 7px;
+  top: 3px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
 

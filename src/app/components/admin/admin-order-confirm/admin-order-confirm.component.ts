@@ -6,6 +6,7 @@ import { Observable, map } from 'rxjs';
 import { CartItemDTO } from 'src/app/dtos/order/cart.item.dto';
 import { environment } from 'src/app/environments/environment';
 import { LoginResponse } from 'src/app/responses/user/login.response';
+import { CartService } from 'src/app/service/cart.service';
 import { OrderService } from 'src/app/service/order.service';
 import { TokenService } from 'src/app/service/token.service';
 
@@ -19,7 +20,8 @@ export class AdminOrderConfirmComponent implements OnInit{
     private orderService: OrderService,
     private datePipe: DatePipe,
     private router: Router,
-    private route: ActivatedRoute,){}
+    private route: ActivatedRoute,
+    private orderSerivce: OrderService){}
 
   cart_items!: CartItemDTO[]; // Thêm cart_items để lưu thông tin giỏ hàng
   
@@ -146,5 +148,55 @@ export class AdminOrderConfirmComponent implements OnInit{
 
   cancelOrder(){
     
+  }
+
+  isCancelledRoute(): boolean {
+    return this.router.url === '/admin/order-confirm/cancelled';
+  }
+
+  deleteSelectedOrders() {
+    debugger
+    console.log(this.selectedIds);
+    this.orderSerivce.deleteOrders(this.selectedIds)?.subscribe({
+      next: (product) => {
+        
+        alert("Xóa đơn hàng thành công!");
+        location.reload();
+      },
+      complete: () => {
+      
+      },
+      error: (error: any) => {
+        debugger;
+        console.error('Error fetching detail:', error);
+        alert("Xóa đơn hàng thất bại!");
+      }
+    });
+  }
+
+  selectedIds: number[] = [];
+
+
+  toggleSelection(id: number) {
+    const index = this.selectedIds.indexOf(id);
+    if (index > -1) {
+      this.selectedIds.splice(index, 1); // Remove ID if already selected
+    } else {
+      this.selectedIds.push(id); // Add ID if not selected
+    }
+  }
+
+  toggleAllCheckboxes() {
+    const checkboxes = document.getElementsByName('foo');
+    const checkAllCheckbox = document.getElementById('checkAll') as HTMLInputElement;
+    for (let i = 0; i < checkboxes.length; i++) {
+      const checkbox = checkboxes[i] as HTMLInputElement;
+    checkbox.checked = checkAllCheckbox.checked;
+
+    if (checkbox.checked) {
+      const productId =  parseInt(checkbox.value, 10); // Convert to number
+      this.toggleSelection(productId);
+    }
+    }
   }
 }
