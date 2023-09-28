@@ -30,7 +30,7 @@
             </div>
             <div class="row">
                 <div class="thumbnail-container">
-                    <div class="thumbnail-item"
+                    <div class="thumbnail-item twinkle"
                     *ngFor="let image of product?.product_images; let i = index"
                     [ngClass]="{'active': i === currentImageIndex}"
                     (click)="thumbnailClick(i)">
@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="product-details">
+            <div class="product-details twinkle">
                 <h2>{{product?.name}}</h2>
                 <p>{{product?.description}}</p>
                 <p>{{product?.price | number: '.0-0' }} VND</p>
