@@ -59,7 +59,7 @@ export class OrderComponent implements OnInit{
       phone_number: ['', [Validators.required, Validators.minLength(6)]], // phone_number bắt buộc và ít nhất 6 ký tự
       address: ['', [Validators.required, Validators.minLength(5)]], // address bắt buộc và ít nhất 5 ký tự
       note: [''],
-      shipping_method: [''],
+      shipping_method: ['Vận chuyển từ nhà bán'],
       payment_method: ['']
     });
   }

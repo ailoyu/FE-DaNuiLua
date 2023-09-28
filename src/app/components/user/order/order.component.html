@@ -66,23 +66,31 @@
                         placeholder="Ghi chú" required
                         id="note">
                 </div>                
-                <div class="form-group">
-                    <label for="shippingMethod">Phương thức vận chuyển</label>
-                    <select class="form-control" id="shippingMethod"
-                    formControlName="shipping_method">
-                        <option value="express">Nhanh (Express)</option>
-                        <option value="normal">Thường (Normal)</option>
-                    </select>
-                </div>
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label for="paymentMethod">Phương thức thanh toán</label>
-                    <select class="form-control" id="paymentMethod"
+                    <select class="form-control access-right" id="paymentMethod"
                         formControlName="shipping_method"
                         formControlName="payment_method">
-                        <option value="cod">Thanh toán khi nhận hàng (COD)</option>
-                        <option value="other">Thanh toán khác</option>
+                        <option value="Chuyển Khoản" selected>Thanh toán chuyển khoản</option>
                     </select>
                 </div>
+                <div class="form-group mb-3">
+                    <label for="paymentMethod">Sau khi chuyển khoản</label>
+                    <label for="paymentMethod">Chúng tôi sẽ gọi lại để xác nhận đơn hàng. Xin chân thành cảm ơn!</label>
+
+                </div>
+                    
+                <div class="bank-card">
+                    <div class="card-header">
+                        <img src="https://scontent.fsgn5-2.fna.fbcdn.net/v/t39.30808-6/351344349_622871879812617_5219534346171303186_n.png?_nc_cat=105&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=18ii39XvOuUAX9qqSoV&_nc_ht=scontent.fsgn5-2.fna&oh=00_AfD7jWH9VGa2H5dxV7Wl3Mq2O0kQBfconcR-qChAe5CnsQ&oe=65194CA8" alt="Bank Logo">
+                    </div>
+                    <div class="card-body" style="color: black;">
+                        <h3>Thông tin chuyển khoản</h3>
+                        <p>Tên tài khoản: Huynh Thi Thu Hong</p>
+                        <p>Số TK: 67 220 329</p>
+                        <p>Tại ngân hàng Á Châu - CN TP.HCM</p>
+                    </div>
+                </div> 
             </form>
         </div>
         <div class="col-md-6">

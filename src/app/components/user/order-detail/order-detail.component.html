@@ -27,15 +27,15 @@
                         </div>
                     </td>
                     <td>{{ item.quantity }}</td>
-                    <td>{{ item.product.price | number: '.0-0'  }}</td>
-                    <td>{{ (item.product.price * item.quantity) | number: '.0-0'  }}</td>
+                    <td>{{ item.product.price | number: '.0-0'  }} VND</td>
+                    <td>{{ (item.product.price * item.quantity) | number: '.0-0'  }} VND</td>
                 </tr>
             </ng-container>
                 
             </tbody>
         </table>   
         <div class="text-start mt-3">
-            <h4 class="header-text text-end ">Tổng giá: {{ totalAmount | number: '.0-0' }}</h4>
+            <h4 class="header-text text-end ">Tổng giá: {{ totalAmount | number: '.0-0' }} VND</h4>
         </div>
         <div class="text-center mt-3">
            <button class="btn btn-gradient" type="button" (click)="returnHomePage()">Tiếp tục mua sắm</button>
